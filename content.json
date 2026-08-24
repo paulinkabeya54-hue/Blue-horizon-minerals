@@ -19,10 +19,10 @@
     "stat3_label": "Partner network"
   },
   "products": [
-    { "symbol": "Au", "name": "Gold", "description": "Raw and refined gold, sourced from reliable partners.", "image": "assets/gold.jpeg" },
-    { "symbol": "Co", "name": "Coltan", "description": "Industrial-grade coltan for the global electronics industry.", "image": "assets/coltan.jpeg" },
-    { "symbol": "Cu", "name": "Copper", "description": "Copper supplied to international industrial markets.", "image": "assets/copper.jpeg" },
-    { "symbol": "Cb", "name": "Cobalt", "description": "Cobalt for the technology and energy industries.", "image": "assets/cobalt.jpeg" },
+    { "symbol": "Au", "name": "Gold", "description": "Raw and refined gold, sourced from reliable partners.", "image": "assets/copper.jpeg" },
+    { "symbol": "Co", "name": "Coltan", "description": "Industrial-grade coltan for the global electronics industry.", "image": "assets/cobalt.jpeg" },
+    { "symbol": "Cu", "name": "Copper", "description": "Copper supplied to international industrial markets.", "image": "assets/gold.jpeg" },
+    { "symbol": "Cb", "name": "Cobalt", "description": "Cobalt for the technology and energy industries.", "image": "assets/coltan.jpeg" },
     { "symbol": "+", "name": "Other Minerals", "description": "Availability depending on partnerships and market demand.", "image": "" }
   ],
   "services": [
