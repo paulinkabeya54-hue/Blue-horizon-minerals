@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Horizon Minerals Ltd — Exploration • Extraction • Global Trade</title>
+<meta name="description" content="Blue Horizon Minerals Ltd — international sales and trade of minerals: gold, coltan, copper, cobalt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#07090d;
+    --navy-deep:#0b1730;
+    --navy:#16264d;
+    --navy-light:#2c4372;
+    --gold:#c9a24a;
+    --gold-bright:#e9c977;
+    --off-white:#f3f1ea;
+    --grey:#93a0bd;
+    --line: rgba(201,162,74,0.25);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--black);
+    color:var(--off-white);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    letter-spacing:0.02em;
+    color:var(--off-white);
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:0.28em;
+    font-size:0.72rem;
+    color:var(--gold);
+    font-weight:600;
+  }
+  .container{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:15px 32px;
+    font-size:0.85rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    font-weight:600;
+    border-radius:2px;
+    transition:all 0.3s ease;
+    cursor:pointer;
+    border:1px solid transparent;
+  }
+  .btn-gold{
+    background:linear-gradient(135deg, var(--gold-bright), var(--gold));
+    color:var(--black);
+  }
+  .btn-gold:hover{
+    filter:brightness(1.1);
+    transform:translateY(-2px);
+    box-shadow:0 10px 30px rgba(201,162,74,0.3);
+  }
+  .btn-outline{
+    border-color:var(--gold);
+    color:var(--gold-bright);
+    background:transparent;
+  }
+  .btn-outline:hover{
+    background:rgba(201,162,74,0.1);
+    transform:translateY(-2px);
+  }
+
+  /* HEADER */
+  header{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:100;
+    background:rgba(7,9,13,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    transition:background 0.3s ease;
+  }
+  .nav-wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 32px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .brand img{height:52px; width:auto;}
+  .brand-text{
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.15rem;
+    font-weight:700;
+    color:var(--off-white);
+    line-height:1.1;
+  }
+  .brand-text span{
+    display:block;
+    font-family:'Inter', sans-serif;
+    font-size:0.6rem;
+    letter-spacing:0.25em;
+    color:var(--gold);
+    font-weight:600;
+    margin-top:2px;
+  }
+  nav ul{
+    display:flex;
+    list-style:none;
+    gap:34px;
+  }
+  nav a{
+    font-size:0.82rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    font-weight:500;
+    color:var(--off-white);
+    position:relative;
+    padding-bottom:4px;
+  }
+  nav a::after{
+    content:'';
+    position:absolute;
+    left:0; bottom:0;
+    width:0; height:1px;
+    background:var(--gold);
+    transition:width 0.3s ease;
+  }
+  nav a:hover::after{width:100%;}
+  .nav-cta{display:none;}
+  .burger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
+    background:none; border:none;
+  }
+  .burger span{width:26px; height:2px; background:var(--gold);}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:140px 24px 80px;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(44,67,114,0.35), transparent 60%),
+      linear-gradient(180deg, var(--black) 0%, var(--navy-deep) 60%, var(--black) 100%);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(201,162,74,0.06) 0, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(44,67,114,0.25) 0, transparent 45%);
+    pointer-events:none;
+  }
+  .orbit{
+    position:absolute;
+    top:50%; left:50%;
+    width:900px; height:900px;
+    margin:-450px 0 0 -450px;
+    border:1px solid rgba(201,162,74,0.12);
+    border-radius:50%;
+    animation:spin 60s linear infinite;
+  }
+  .orbit::before{
+    content:'';
+    position:absolute;
+    top:-3px; left:50%;
+    width:6px; height:6px;
+    background:var(--gold-bright);
+    border-radius:50%;
+    box-shadow:0 0 12px 3px rgba(233,201,119,0.7);
+  }
+  .orbit-2{
+    width:1200px; height:1200px;
+    margin:-600px 0 0 -600px;
+    animation-duration:90s;
+    animation-direction:reverse;
+    opacity:0.6;
+  }
+  @keyframes spin{ to{ transform:rotate(360deg);} }
+
+  .hero-content{position:relative; z-index:2; max-width:760px;}
+  .hero-content .eyebrow{margin-bottom:22px; display:block;}
+  .hero h1{
+    font-size:clamp(2.4rem, 6vw, 4.4rem);
+    line-height:1.05;
+    margin-bottom:22px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    background:linear-gradient(135deg, var(--gold-bright), var(--gold));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .hero p{
+    font-size:1.08rem;
+    color:var(--grey);
+    max-width:560px;
+    margin:0 auto 40px;
+  }
+  .hero-actions{
+    display:flex;
+    gap:18px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .hero-tagline{
+    margin-top:56px;
+    display:flex;
+    gap:28px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .hero-tagline span{
+    font-size:0.72rem;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--grey);
+    padding-bottom:6px;
+    border-bottom:1px solid var(--line);
+  }
+
+  /* SECTION GENERIC */
+  section{
+    padding:110px 0;
+    position:relative;
+  }
+  .section-head{
+    text-align:center;
+    max-width:620px;
+    margin:0 auto 64px;
+  }
+  .section-head .eyebrow{display:block; margin-bottom:14px;}
+  .section-head h2{
+    font-size:clamp(2rem, 4vw, 2.8rem);
+  }
+  .section-head p{
+    color:var(--grey);
+    margin-top:16px;
+    font-size:1rem;
+  }
+  .divider{
+    width:60px; height:2px;
+    background:var(--gold);
+    margin:20px auto 0;
+  }
+
+  /* ABOUT */
+  .about{background:var(--navy-deep);}
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+  }
+  .about-visual{
+    position:relative;
+    aspect-ratio:1/1;
+    border-radius:4px;
+    background:
+      linear-gradient(160deg, var(--navy) 0%, var(--black) 100%);
+    border:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+  }
+  .about-visual img{width:70%; filter:drop-shadow(0 20px 40px rgba(0,0,0,0.5));}
+  .about-visual::after{
+    content:'';
+    position:absolute; inset:0;
+    background:radial-gradient(circle at 30% 20%, rgba(201,162,74,0.15), transparent 55%);
+  }
+  .about-text p{color:var(--grey); margin-bottom:18px; font-size:1.02rem;}
+  .stats{
+    display:flex;
+    gap:40px;
+    margin-top:36px;
+    flex-wrap:wrap;
+  }
+  .stat h3{
+    font-size:2.1rem;
+    color:var(--gold-bright);
+  }
+  .stat span{
+    font-size:0.72rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--grey);
+  }
+
+  /* PRODUCTS */
+  .products-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:22px;
+  }
+  .product-card{
+    border:1px solid var(--line);
+    background:linear-gradient(160deg, rgba(22,38,77,0.4), rgba(7,9,13,0.6));
+    text-align:center;
+    border-radius:3px;
+    overflow:hidden;
+    transition:transform 0.35s ease, border-color 0.35s ease;
+  }
+  .product-card:hover{
+    transform:translateY(-8px);
+    border-color:var(--gold);
+  }
+  .product-photo{
+    width:100%;
+    aspect-ratio:4/3;
+    overflow:hidden;
+    position:relative;
+  }
+  .product-photo img{
+    width:100%; height:100%;
+    object-fit:cover;
+    transition:transform 0.5s ease;
+  }
+  .product-card:hover .product-photo img{
+    transform:scale(1.08);
+  }
+  .product-photo::after{
+    content:'';
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, transparent 60%, rgba(7,9,13,0.85) 100%);
+  }
+  .product-body{padding:28px 24px 34px;}
+  .product-icon{
+    width:44px; height:44px;
+    margin:0 auto 16px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background:radial-gradient(circle, var(--gold-bright), var(--gold));
+    color:var(--black);
+    font-family:'Cormorant Garamond', serif;
+    font-weight:700;
+    font-size:1.1rem;
+    margin-top:-38px;
+    position:relative;
+    z-index:2;
+    border:3px solid var(--black);
+  }
+  .product-card h3{font-size:1.3rem; margin-bottom:8px;}
+  .product-card p{color:var(--grey); font-size:0.88rem;}
+
+  /* SERVICES */
+  .services{background:var(--navy-deep);}
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:2px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .service-card{
+    background:var(--navy-deep);
+    padding:44px 32px;
+  }
+  .service-num{
+    font-family:'Cormorant Garamond', serif;
+    font-size:0.9rem;
+    color:var(--gold);
+    letter-spacing:0.1em;
+    display:block;
+    margin-bottom:18px;
+  }
+  .service-card h3{font-size:1.35rem; margin-bottom:12px;}
+  .service-card p{color:var(--grey); font-size:0.9rem;}
+
+  /* WHY US */
+  .why-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:30px;
+  }
+  .why-card{
+    padding:8px 0;
+    border-top:1px solid var(--line);
+    padding-top:24px;
+  }
+  .why-card h3{font-size:1.2rem; color:var(--gold-bright); margin-bottom:10px;}
+  .why-card p{color:var(--grey); font-size:0.92rem;}
+
+  /* CTA STRIP */
+  .cta-strip{
+    background:linear-gradient(120deg, var(--navy), var(--navy-deep));
+    text-align:center;
+    padding:90px 24px;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .cta-strip h2{font-size:clamp(1.8rem, 4vw, 2.6rem); margin-bottom:20px;}
+  .cta-strip p{color:var(--grey); max-width:520px; margin:0 auto 34px;}
+
+  /* CONTACT */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1.1fr;
+    gap:70px;
+  }
+  .contact-info h3{font-size:1.6rem; margin-bottom:22px;}
+  .info-row{
+    display:flex;
+    gap:16px;
+    margin-bottom:26px;
+    align-items:flex-start;
+  }
+  .info-icon{
+    width:38px; height:38px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--gold-bright);
+    font-size:0.9rem;
+  }
+  .info-row h4{font-size:0.95rem; color:var(--off-white); margin-bottom:4px; font-family:'Inter',sans-serif; font-weight:600;}
+  .info-row p, .info-row a{color:var(--grey); font-size:0.92rem;}
+
+  .contact-form{
+    background:var(--navy-deep);
+    border:1px solid var(--line);
+    padding:40px;
+    border-radius:4px;
+  }
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;}
+  .contact-form input, .contact-form textarea{
+    width:100%;
+    background:var(--black);
+    border:1px solid var(--line);
+    color:var(--off-white);
+    padding:14px 16px;
+    font-family:'Inter', sans-serif;
+    font-size:0.9rem;
+    border-radius:2px;
+    margin-bottom:16px;
+  }
+  .contact-form textarea{resize:vertical; min-height:120px;}
+  .contact-form input:focus, .contact-form textarea:focus{
+    outline:1px solid var(--gold);
+    border-color:var(--gold);
+  }
+  .contact-form button{width:100%; border:none;}
+
+  /* FOOTER */
+  footer{
+    background:var(--black);
+    border-top:1px solid var(--line);
+    padding:60px 0 26px;
+  }
+  .footer-top{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:40px;
+    margin-bottom:50px;
+  }
+  .footer-brand{max-width:320px;}
+  .footer-brand img{height:70px; margin-bottom:16px;}
+  .footer-brand p{color:var(--grey); font-size:0.88rem;}
+  .footer-cols{display:flex; gap:70px; flex-wrap:wrap;}
+  .footer-col h4{
+    font-family:'Inter', sans-serif;
+    font-size:0.78rem;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:18px;
+  }
+  .footer-col a, .footer-col p{
+    display:block;
+    color:var(--grey);
+    font-size:0.88rem;
+    margin-bottom:12px;
+  }
+  .footer-bottom{
+    border-top:1px solid var(--line);
+    padding-top:24px;
+    text-align:center;
+    color:var(--grey);
+    font-size:0.8rem;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width:900px){
+    .about-grid, .contact-grid{grid-template-columns:1fr;}
+    .about-visual{order:-1; max-width:340px; margin:0 auto;}
+  }
+  @media (max-width:760px){
+    nav ul{
+      position:fixed;
+      top:78px; left:0; right:0;
+      flex-direction:column;
+      background:var(--black);
+      padding:24px 32px;
+      gap:20px;
+      border-bottom:1px solid var(--line);
+      transform:translateY(-150%);
+      transition:transform 0.35s ease;
+    }
+    nav ul.open{transform:translateY(0);}
+    .burger{display:flex;}
+    .form-row{grid-template-columns:1fr;}
+    .footer-top{flex-direction:column;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .orbit{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="brand">
+      <img src="assets/logo.jpeg" alt="Blue Horizon Minerals Ltd">
+      <div class="brand-text">Blue Horizon<span>Minerals Ltd</span></div>
+    </div>
+    <nav>
+      <ul id="navList">
+        <li><a href="#accueil">Home</a></li>
+        <li><a href="#apropos">About Us</a></li>
+        <li><a href="#produits">Products</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pourquoi">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero" id="accueil">
+  <div class="orbit"></div>
+  <div class="orbit orbit-2"></div>
+  <div class="hero-content">
+    <span class="eyebrow" id="hero-eyebrow">Exploration · Extraction · Global Trade</span>
+    <h1 id="hero-title">Global trade in <em>minerals</em>, done right</h1>
+    <p id="hero-subtitle">Blue Horizon Minerals Ltd connects mineral deposits in the Democratic Republic of Congo to international markets — gold, coltan, copper and cobalt, delivered with rigor and transparency.</p>
+    <div class="hero-actions">
+      <a href="#produits" class="btn btn-gold">Explore our minerals</a>
+      <a href="#contact" class="btn btn-outline">Get in touch</a>
+    </div>
+    <div class="hero-tagline">
+      <span>Gold</span>
+      <span>Coltan</span>
+      <span>Copper</span>
+      <span>Cobalt</span>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="apropos">
+  <div class="container about-grid">
+    <div class="about-visual">
+      <img src="assets/logo.jpeg" alt="Blue Horizon Minerals">
+    </div>
+    <div class="about-text">
+      <span class="eyebrow" id="about-eyebrow">Who We Are</span>
+      <h2 style="margin-top:14px; margin-bottom:20px;" id="about-title">A trusted partner in the mineral trade</h2>
+      <p id="about-p1">Blue Horizon Minerals Ltd is a company specializing in the sale and international trade of minerals. We work with reliable partners and suppliers to offer quality minerals and facilitate their commercialization on international markets.</p>
+      <p id="about-p2">Based in the Democratic Republic of Congo, we support producers and buyers at every step, from sourcing to connecting with international partners.</p>
+      <div class="stats">
+        <div class="stat"><h3 id="stat1-num">4+</h3><span id="stat1-label">Minerals traded</span></div>
+        <div class="stat"><h3 id="stat2-num">DRC</h3><span id="stat2-label">Base of operations</span></div>
+        <div class="stat"><h3 id="stat3-num">Global</h3><span id="stat3-label">Partner network</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="produits">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Our Products</span>
+      <h2>Quality minerals, ready for the global market</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="products-grid" id="products-grid">
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Our Services</span>
+      <h2>From sourcing to global market delivery</h2>
+      <div class="divider"></div>
+    </div>
+  </div>
+  <div class="services-grid" id="services-grid">
+  </div>
+</section>
+
+<section id="pourquoi">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why Blue Horizon</span>
+      <h2>Rigor at every step</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="why-grid" id="why-grid">
+    </div>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <h2>Ready to start a partnership?</h2>
+  <p>Contact our team to discuss your sourcing or mineral commercialization needs.</p>
+  <a href="#contact" class="btn btn-gold">Get in touch</a>
+</div>
+
+<section id="contact">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <span class="eyebrow">Contact</span>
+      <h3 style="margin-top:14px;">Let's talk about your project</h3>
+      <div style="margin-top:30px;">
+        <div class="info-row">
+          <div class="info-icon">☎</div>
+          <div>
+            <h4>Phone</h4>
+            <a href="tel:+243993178268" id="contact-phone">+243 993 178 268</a>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">✉</div>
+          <div>
+            <h4>Email</h4>
+            <a href="mailto:info@bluehorizonminerals.com" id="contact-email">info@bluehorizonminerals.com</a>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">📍</div>
+          <div>
+            <h4>Address</h4>
+            <p id="contact-address">Democratic Republic of Congo</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <input type="text" placeholder="Last name" required>
+        <input type="text" placeholder="First name" required>
+      </div>
+      <div class="form-row">
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Phone">
+      </div>
+      <textarea placeholder="Your message" required></textarea>
+      <button type="submit" class="btn btn-gold">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/logo.jpeg" alt="Blue Horizon Minerals Ltd">
+        <p id="footer-tagline">Exploration, extraction and international trade of minerals from the Democratic Republic of Congo.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="#accueil">Home</a>
+          <a href="#apropos">About Us</a>
+          <a href="#produits">Products</a>
+          <a href="#services">Services</a>
+        </div>
+        <div class="footer-col">
+          <h4>Minerals</h4>
+          <a href="#produits">Gold</a>
+          <a href="#produits">Coltan</a>
+          <a href="#produits">Copper</a>
+          <a href="#produits">Cobalt</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p id="footer-phone">+243 993 178 268</p>
+          <p id="footer-email">info@bluehorizonminerals.com</p>
+          <p id="footer-address">Democratic Republic of Congo</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom" id="footer-copyright">
+      &copy; 2026 Blue Horizon Minerals Ltd. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  const burger = document.getElementById('burger');
+  const navList = document.getElementById('navList');
+  burger.addEventListener('click', () => navList.classList.toggle('open'));
+  navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navList.classList.remove('open')));
+
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    header.style.boxShadow = window.scrollY > 20 ? '0 10px 30px rgba(0,0,0,0.4)' : 'none';
+  });
+
+  const contactForm = document.getElementById('contactForm');
+  contactForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Thank you for your message! We will get back to you shortly.\n\n(This form will be connected to a working email address once the site goes live.)');
+    contactForm.reset();
+  });
+
+  // Load editable content from content.json (managed via the /admin panel)
+  fetch('content.json?v=' + Date.now())
+    .then(res => res.json())
+    .then(data => {
+      // Hero
+      if (data.hero) {
+        document.getElementById('hero-eyebrow').textContent = data.hero.eyebrow;
+        document.getElementById('hero-title').innerHTML =
+          data.hero.title_line1 + ' <em>' + data.hero.title_highlight + '</em>, ' + data.hero.title_line2;
+        document.getElementById('hero-subtitle').textContent = data.hero.subtitle;
+      }
+      // About
+      if (data.about) {
+        document.getElementById('about-eyebrow').textContent = data.about.eyebrow;
+        document.getElementById('about-title').textContent = data.about.title;
+        document.getElementById('about-p1').textContent = data.about.paragraph1;
+        document.getElementById('about-p2').textContent = data.about.paragraph2;
+        document.getElementById('stat1-num').textContent = data.about.stat1_number;
+        document.getElementById('stat1-label').textContent = data.about.stat1_label;
+        document.getElementById('stat2-num').textContent = data.about.stat2_number;
+        document.getElementById('stat2-label').textContent = data.about.stat2_label;
+        document.getElementById('stat3-num').textContent = data.about.stat3_number;
+        document.getElementById('stat3-label').textContent = data.about.stat3_label;
+      }
+      // Products
+      if (data.products) {
+        document.getElementById('products-grid').innerHTML = data.products.map(p => `
+          <div class="product-card">
+            ${p.image ? `<div class="product-photo"><img src="${p.image}" alt="${p.name}"></div>` : ''}
+            <div class="product-body">
+              <div class="product-icon">${p.symbol}</div>
+              <h3>${p.name}</h3>
+              <p>${p.description}</p>
+            </div>
+          </div>`).join('');
+      }
+      // Services
+      if (data.services) {
+        document.getElementById('services-grid').innerHTML = data.services.map(s => `
+          <div class="service-card">
+            <span class="service-num">${s.number}</span>
+            <h3>${s.title}</h3>
+            <p>${s.description}</p>
+          </div>`).join('');
+      }
+      // Why Us
+      if (data.why_us) {
+        document.getElementById('why-grid').innerHTML = data.why_us.map(w => `
+          <div class="why-card">
+            <h3>${w.title}</h3>
+            <p>${w.description}</p>
+          </div>`).join('');
+      }
+      // Contact
+      if (data.contact) {
+        document.getElementById('contact-phone').textContent = data.contact.phone;
+        document.getElementById('contact-phone').href = 'tel:' + data.contact.phone.replace(/\s/g, '');
+        document.getElementById('contact-email').textContent = data.contact.email;
+        document.getElementById('contact-email').href = 'mailto:' + data.contact.email;
+        document.getElementById('contact-address').textContent = data.contact.address;
+        document.getElementById('footer-phone').textContent = data.contact.phone;
+        document.getElementById('footer-email').textContent = data.contact.email;
+        document.getElementById('footer-address').textContent = data.contact.address;
+      }
+      // Footer
+      if (data.footer) {
+        document.getElementById('footer-tagline').textContent = data.footer.tagline;
+        document.getElementById('footer-copyright').textContent = data.footer.copyright;
+      }
+    })
+    .catch(err => console.error('Could not load content.json', err));
+</script>
+
+</body>
+</html>

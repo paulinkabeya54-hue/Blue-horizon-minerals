@@ -1,0 +1,49 @@
+{
+  "hero": {
+    "eyebrow": "Exploration · Extraction · Global Trade",
+    "title_line1": "Global trade in",
+    "title_highlight": "minerals",
+    "title_line2": "done right",
+    "subtitle": "Blue Horizon Minerals Ltd connects mineral deposits in the Democratic Republic of Congo to international markets — gold, coltan, copper and cobalt, delivered with rigor and transparency."
+  },
+  "about": {
+    "eyebrow": "Who We Are",
+    "title": "A trusted partner in the mineral trade",
+    "paragraph1": "Blue Horizon Minerals Ltd is a company specializing in the sale and international trade of minerals. We work with reliable partners and suppliers to offer quality minerals and facilitate their commercialization on international markets.",
+    "paragraph2": "Based in the Democratic Republic of Congo, we support producers and buyers at every step, from sourcing to connecting with international partners.",
+    "stat1_number": "4+",
+    "stat1_label": "Minerals traded",
+    "stat2_number": "DRC",
+    "stat2_label": "Base of operations",
+    "stat3_number": "Global",
+    "stat3_label": "Partner network"
+  },
+  "products": [
+    { "symbol": "Au", "name": "Gold", "description": "Raw and refined gold, sourced from reliable partners.", "image": "assets/gold.jpeg" },
+    { "symbol": "Co", "name": "Coltan", "description": "Industrial-grade coltan for the global electronics industry.", "image": "assets/coltan.jpeg" },
+    { "symbol": "Cu", "name": "Copper", "description": "Copper supplied to international industrial markets.", "image": "assets/copper.jpeg" },
+    { "symbol": "Cb", "name": "Cobalt", "description": "Cobalt for the technology and energy industries.", "image": "assets/cobalt.jpeg" },
+    { "symbol": "+", "name": "Other Minerals", "description": "Availability depending on partnerships and market demand.", "image": "" }
+  ],
+  "services": [
+    { "number": "01", "title": "Sales & Commercialization", "description": "Sale and commercialization of minerals to qualified buyers internationally." },
+    { "number": "02", "title": "International Trade", "description": "Management of mineral trade across global markets." },
+    { "number": "03", "title": "Sourcing", "description": "Reliable sourcing of minerals from producers and partner suppliers." },
+    { "number": "04", "title": "Partner Matching", "description": "Connecting buyers with international partners for secure transactions." }
+  ],
+  "why_us": [
+    { "title": "Reliability", "description": "Partners and suppliers carefully selected to guarantee the quality of minerals." },
+    { "title": "Global Reach", "description": "An extensive network connecting Congolese supply to world markets." },
+    { "title": "Transparency", "description": "Clear guidance, from sourcing through to the final transaction." },
+    { "title": "Diverse Minerals", "description": "Gold, coltan, copper, cobalt — a full offering tailored to buyers' needs." }
+  ],
+  "contact": {
+    "phone": "+243 993 178 268",
+    "email": "info@bluehorizonminerals.com",
+    "address": "Democratic Republic of Congo"
+  },
+  "footer": {
+    "tagline": "Exploration, extraction and international trade of minerals from the Democratic Republic of Congo.",
+    "copyright": "© 2026 Blue Horizon Minerals Ltd. All rights reserved."
+  }
+}
